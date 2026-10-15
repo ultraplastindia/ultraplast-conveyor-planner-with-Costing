@@ -1,0 +1,12 @@
+{
+  "name": "ultraplast-conveyor-planner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ultraplast Smart Conveyor Planner & Estimator - static site, no runtime dependencies",
+  "scripts": {
+    "test": "node tests/calculations.test.js && node tests/report.test.js && node tests/simulation.test.js && node tests/conveyor3d.test.js && node tests/costing.test.js && node tests/sheets.test.js",
+    "serve": "python3 -m http.server 8080",
+    "test:browser": "node tests/browser-smoke.js && node tests/browser-sheet.js && node tests/browser-costing.js"
+  },
+  "license": "UNLICENSED"
+}

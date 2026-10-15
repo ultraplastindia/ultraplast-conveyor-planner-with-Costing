@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ultraplast Smart Conveyor Planner &amp; Estimator</title>
+  <meta name="description" content="Plan a preliminary conveyor system for your factory: layout, route length, throughput and equipment checklist. Request a detailed quotation from Ultraplast Chainbelts Pvt. Ltd.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="top">
+    <div class="wrap bar">
+      <a class="brand" href="https://www.ultraplastindia.com/" target="_blank" rel="noopener" aria-label="Ultraplast Chainbelts - company website">
+        <img id="logo" alt="Ultraplast" height="40">
+        <span id="logoText" hidden><b>ULTRA</b>PLAST</span>
+      </a>
+      <div class="titles"><h1>Smart Conveyor Planner &amp; Estimator</h1><p>Preliminary planning tool &middot; not a quotation</p></div>
+      <div class="tools">
+        <fieldset class="seg-units"><legend class="sr">Units</legend>
+          <label><input type="radio" name="units" value="metric" checked> Metric</label>
+          <label><input type="radio" name="units" value="imperial"> Imperial</label>
+        </fieldset>
+        <label class="chk sm"><input type="checkbox" id="advToggle"> <span>Advanced</span></label>
+        <label class="btn ghost sm" id="importWrap" title="Load a project JSON you downloaded earlier">Load JSON<input type="file" id="importFile" accept="application/json,.json" hidden></label>
+        <button type="button" class="btn ghost sm" id="btnReset">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+    <noscript><p class="banner bad">This calculator needs JavaScript. Please enable it, or contact Ultraplast directly at info@ultraplastindia.in.</p></noscript>
+    <div id="app">
+      <nav aria-label="Progress" class="progress">
+        <div class="pbar" aria-hidden="true"><i id="progressBar"></i></div>
+        <ol id="progress"></ol>
+        <p class="sr" id="progressText" aria-live="polite"></p>
+      </nav>
+
+      <div id="wizardWrap" class="layout">
+        <form id="wizard" novalidate class="panel" autocomplete="off">
+          <h2 id="stepTitle"></h2>
+          <p id="stepIntro" class="intro"></p>
+          <div id="errSummary" class="banner bad" role="alert" hidden></div>
+          <div id="stepBody"></div>
+          <div class="nav">
+            <button type="button" class="btn" id="btnBack" hidden>&larr; Back</button>
+            <button type="submit" class="btn primary" id="btnNext">Next &rarr;</button>
+          </div>
+        </form>
+        <aside class="side" aria-label="Live preview">
+          <div class="panel sticky">
+            <h3>Live preview</h3>
+            <div id="liveSchem"></div>
+            <div id="liveStats" class="stats"></div>
+            <p class="note">Preliminary estimate. Dimensions in black are entered by you; red is calculated or proposed.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div id="resultsWrap" hidden>
+        <div class="reshead">
+          <h2 id="resultsTitle">Preliminary results</h2>
+          <div class="btnrow"><button type="button" class="btn" data-goto="4">&larr; Edit inputs</button><button type="button" class="btn ghost" id="btnNew">Start new project</button></div>
+        </div>
+        <div id="resultsBody"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p><b>Important:</b> This tool gives preliminary, indicative results from the information you enter. It is not an engineering design, product approval or quotation, and does not include prices. Final selection of belts, chains, drives, structure and safety measures is made by Ultraplast engineers after detailed review.</p>
+      <p>&copy; Ultraplast Chainbelts Private Limited &middot; <a href="https://www.ultraplastindia.com/" target="_blank" rel="noopener">ultraplastindia.com</a> &middot; Your inputs stay in this browser tab and are not saved.</p>
+      <p id="dataSource" class="src"></p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="products.js"></script>
+  <script src="sheetconfig.js"></script>
+  <script src="calculations.js"></script>
+  <script src="costing.js"></script>
+  <script src="report.js"></script>
+  <script src="enquiry.js"></script>
+  <script src="schematic.js"></script>
+  <script src="simulation.js"></script>
+  <script src="conveyor3d.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
